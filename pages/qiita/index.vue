@@ -23,6 +23,11 @@
 
 <script>
   export default {
+    head() {
+      return {
+        title: 'qiita'
+      }
+    },
     async asyncData({ app }){
       const items = await app.$axios.$get('https://qiita.com/api/v2/items?query=tag:nuxt.js')
       return {
